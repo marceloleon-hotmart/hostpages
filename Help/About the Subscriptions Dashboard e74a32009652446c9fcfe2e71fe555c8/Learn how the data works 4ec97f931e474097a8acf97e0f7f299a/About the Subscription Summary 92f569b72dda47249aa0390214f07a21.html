@@ -1,0 +1,703 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>About the Subscription Summary</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="92f569b7-2dda-4724-9aa0-390214f07a21" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/table_gray.svg"/></div><h1 class="page-title">About the Subscription Summary</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><figure id="e7b1f9d2-3f5c-4d4d-bdac-6bd4257d91b8" class="image"><a href="About%20the%20Subscription%20Summary%2092f569b72dda47249aa0390214f07a21/subssummarycover.png"><img style="width:1092px" src="About%20the%20Subscription%20Summary%2092f569b72dda47249aa0390214f07a21/subssummarycover.png"/></a></figure><p id="4b93d172-d05e-4280-82ab-225864b717ee" class="">
+</p><p id="e2b2931e-006d-478f-a1ba-f9f4dd9407b9" class="">If you need to understand the current situation of your subscriptions, the summary brings together all the information you need to make decisions.</p><p id="2963238e-5b51-4744-b774-d3480f6105ed" class="">It also includes purchases with intelligent installment and recovery, so you can understand all recurring sales in one place.</p><ul id="85a09706-6b9a-41b0-93ff-343d4cda26f2" class="bulleted-list"><li style="list-style-type:disc">We provide both the static and dynamic status of each subscription. <a href="Types%20of%20Status%20(Static%20and%20Dynamic)%2050c81bcd1c4a4197b183bb804d39a87f.html"><strong>Understand what the static and dynamic statuses are.</strong></a> This way, you can understand, for example, whether the active subscription is new, a renewal, or even a reactivated subscription. You can also find out which canceled subscriptions were canceled in the last billing cycle or before.</li></ul><ul id="87321825-f489-46d9-8249-c774a8bb56fd" class="bulleted-list"><li style="list-style-type:disc">You can find out if the billing is monthly, yearly, or another type. This makes it easier to study the behavior of monthly subscriptions separately from annual ones, for example.</li></ul><ul id="fa883c68-9f1c-47b6-b365-ec5b35a6bbf4" class="bulleted-list"><li style="list-style-type:disc">You can find out if the subscription is in a trial period and when it ends.</li></ul><p id="68b1c694-add5-4327-9632-711531ebec33" class="">All of this is followed by the buyer&#x27;s contact information so you can get in touch with them.</p><p id="da59d673-36b0-4e69-8510-9028d3a905e8" class="">Various data analyses are possible based on the summary. Take data-driven actions to boost your business!</p><table id="b96771c8-1b17-4656-8dcb-30d5070d431f" class="simple-table"><tbody><tr id="9d5a21c3-1cfd-4f73-a85e-c7884b5b4ed1"><td id="eewU" class=""><strong>Name Column</strong></td><td id="AQU`" class="" style="width:464px"><strong>Description Column</strong></td></tr><tr id="65cd78be-3f20-465b-85e8-e77e5e669b6e"><td id="eewU" class=""><strong>Customer’s phone #</strong></td><td id="AQU`" class="" style="width:464px">Buyer&#x27;s phone number informed at the time of purchase.</td></tr><tr id="e00dceb6-f21e-467b-b355-76f24e503d63"><td id="eewU" class=""><strong>Customer’s area code</strong></td><td id="AQU`" class="" style="width:464px">Buyer’s area code informed at the time of purchase.</td></tr><tr id="f4f01a4c-fedb-453e-9c4d-d13767a0f571"><td id="eewU" class=""><strong>Commission currency</strong></td><td id="AQU`" class="" style="width:464px">Currency selected for commission payment at time of signup. It may change during the subscription’s term. In this situation, there will be a row in the table for each currency.</td></tr><tr id="3257b73e-373e-44b3-912e-d35417f25a38"><td id="eewU" class=""><strong>Total commission</strong></td><td id="AQU`" class="" style="width:464px">Sum of commission amounts referring to confirmed payments. This amount corresponds to a recurrence commission.</td></tr><tr id="6cf63e28-dbd5-4ab4-8418-6a25d70aee33"><td id="eewU" class=""><strong>Was there a trial period?</strong></td><td id="AQU`" class="" style="width:464px">Informs if the subscription had a free trial period.</td></tr><tr id="d067c0db-ee30-4b88-ac06-a4ccefdde90c"><td id="eewU" class=""><strong>Are there past unpaid recurrences?</strong></td><td id="AQU`" class="" style="width:464px">Indicates whether the subscription has unpaid recurrences.</td></tr><tr id="5511c723-a4d8-498c-8f8d-58d2151188a2"><td id="eewU" class=""><strong>Product code</strong></td><td id="AQU`" class="" style="width:464px">Code of the product sold in the subscription.</td></tr><tr id="6fc0b822-7d40-4342-bb05-0a538d399794"><td id="eewU" class=""><strong>Product</strong></td><td id="AQU`" class="" style="width:464px">Name of the product sold in the subscription.</td></tr><tr id="1203da0e-f97a-4b4a-b460-c8476d0a878f"><td id="eewU" class=""><strong>Current offer key</strong></td><td id="AQU`" class="" style="width:464px">Informs the offer key in effect at the last subscription recurrence, since the buyer can change the plan/offer after signing up.</td></tr><tr id="2d6dcc86-3e35-4a5d-9d8b-2b2f9c1f4c2e"><td id="eewU" class=""><strong>Purchasing currency</strong></td><td id="AQU`" class="" style="width:464px">The currency in which the membership payment was made and will be used for the duration of the subscription.</td></tr><tr id="5a52f58d-31d3-4229-9569-56554831cea5"><td id="eewU" class=""><strong>Total paid-in amount</strong></td><td id="AQU`" class="" style="width:464px">Sum of the paid-in total since signing up, in a given currency.</td></tr><tr id="04a2442c-4bce-4f80-9701-c53937ae9549"><td id="eewU" class=""><strong>Subscription code</strong></td><td id="AQU`" class="" style="width:464px">Alphanumeric code that identifies a Subscription-Subscriber. A single buyer can have multiple subscription codes.</td></tr><tr id="f6229b16-673e-4916-a37a-cd0a5b0cf907"><td id="eewU" class=""><strong>Signup date</strong></td><td id="AQU`" class="" style="width:464px">Date on which the buyer requests to sign up for the subscription.This is different from the activation date, which tells you when the 1st recurrence of the subscription became active</td></tr><tr id="110ad366-db63-4c13-951d-47fe64770cc7"><td id="eewU" class=""><strong>Cancellation date</strong></td><td id="AQU`" class="" style="width:464px">Date on which the subscription was canceled (the request and the cancellation take place simultaneously). After the cancellation, it can be reactivated if it hasn’t expired yet. If this happens, the date remains filled in. If it’s reactivated and canceled again, the cancellation date will be updated to the most recent one. 
+On the 1st recurrence, whenever a refund or chargeback is requested, the subscription is canceled.</td></tr><tr id="957a458f-b599-426f-8582-8d82d115c9b3"><td id="eewU" class=""><strong>Signature Id</strong></td><td id="AQU`" class="" style="width:464px">Unique numeric code that identifies a signature.</td></tr><tr id="2988d17e-4b62-4202-9f13-70d69558bbeb"><td id="eewU" class=""><strong>Current plan</strong></td><td id="AQU`" class="" style="width:464px">Provides information about the plan in effect at the last subscription recurrence, since the buyer can change it after signing up.</td></tr><tr id="60170532-56a3-4efe-991e-d8d669d0fb91"><td id="eewU" class=""><strong>Max. number of recurrences</strong></td><td id="AQU`" class="" style="width:464px">The maximum number of recurrences of a Product-Plan defined by the creator, the due date being the end of the period of the last recurrence. While the Subscription is valid, the billing of recurrences occurs automatically at the beginning of each period. After expiration, it is not possible to renew the same Subscription. 
+If no maximum amount of recurrences is defined, it is only terminated if it is canceled.</td></tr><tr id="82ec9e21-a451-4562-8459-3ea5f60249d1"><td id="eewU" class=""><strong>Last recurrence number</strong></td><td id="AQU`" class="" style="width:464px">Identification of the last recurrence of a subscription, in the following format: &quot;Number (Start of the last recurrence)&quot;. If the Status is Canceled or Overdue, it corresponds to the final recurrence of its lifespan. If it has Started or is Inactive, it will be the 1st recurrence. If it is current (Active or Overdue), it corresponds to the current recurrence.</td></tr><tr id="3b3b89df-d23a-47fc-8511-bf5c15967e84"><td id="eewU" class=""><strong>Analysis of the last recurrence</strong></td><td id="AQU`" class="" style="width:464px">The possible amounts are:
+FOR SUBSCRIPTIONS
+- Refund request under analysis. Understand the customer&#x27;s motives and seek to reverse the situation.
+- Retries in progress. Wait or encourage the customer to complete the payment.
+- Retries closed without payment. Offer options to the customer.
+- Payment not approved. Offer options to the customer.
+- Trial period until [date_end_trial]
+- Paid
+- Refunded
+- Chargeback
+- Subscription canceled
+- Inactive Subscription</td></tr><tr id="4213d996-f159-497d-a85a-5bd97bd62c02"><td id="eewU" class=""><strong>Last recurrence number</strong></td><td id="AQU`" class="" style="width:464px">Identification of the Number of the last recurrence of a subscription.</td></tr><tr id="e34d4c96-0c07-471a-b1c6-2ce309a4d815"><td id="eewU" class=""><strong>Reference date of the last recurrence</strong></td><td id="AQU`" class="" style="width:464px">Date on which the last recurrence of a subscription starts (period of use of the service).</td></tr><tr id="90e8b02d-4b13-44a9-b664-44bd54e689ce"><td id="eewU" class=""><strong>Status of the last recurrence</strong></td><td id="AQU`" class="" style="width:464px">Informs the Status of the last recurrence of the subscription.</td></tr><tr id="f7464281-7328-4bd3-bc23-a76d7e429908"><td id="eewU" class=""><strong>Number of billing attempts for the last recurrence</strong></td><td id="AQU`" class="" style="width:464px">Number of existing billing transactions for the last recurrence of the subscription.</td></tr><tr id="d007cb73-ebe6-4051-af7b-635e95b50466"><td id="eewU" class=""><strong>Lifetime (days)</strong></td><td id="AQU`" class="" style="width:464px">Informs the subscription’s time in number of days, from the signup date to: 
+- Active / Overdue: current date
+- Inactive / Started: 0
+- Canceled: date of cancellation
+- Overdue: due date.</td></tr><tr id="4ea25663-3118-4640-a699-6ab11a4b4b50"><td id="eewU" class=""><strong>Number of past recurrences paid</strong></td><td id="AQU`" class="" style="width:464px">Number of distinct paid recurrences within the lifespan of a subscription.</td></tr><tr id="3e817675-445a-4809-a9bf-dabcd197028a"><td id="eewU" class=""><strong>Periodicity</strong></td><td id="AQU`" class="" style="width:464px">The duration of the recurrences of the Plan in effect at the last recurrence of the subscription, since the buyer can change plans after signing up.</td></tr><tr id="1059adf5-46c4-4db5-a860-023e3aea08ab"><td id="eewU" class=""><strong>Trial period end date</strong></td><td id="AQU`" class="" style="width:464px">When the subscription has a free trial period, it indicates its end date.</td></tr><tr id="fd3d0897-d2bb-4a58-bf90-f751d9ef2a72"><td id="eewU" class=""><strong>Past unpaid recurrences</strong></td><td id="AQU`" class="" style="width:464px">Lists all unpaid recurrences for a subscription, in the following format: &quot;Number (Start date)&quot;.</td></tr><tr id="22ef9c49-d257-4c19-86fe-457da3fb1f50"><td id="eewU" class=""><strong>Ref. numbers of past unpaid recurrences</strong></td><td id="AQU`" class="" style="width:464px">Lists the numbers of all unpaid recurrences of a subscription.</td></tr><tr id="7e8ac467-fda7-4f2a-a9d2-cec8323a73d3"><td id="eewU" class=""><strong>Number of past unpaid recurrences</strong></td><td id="AQU`" class="" style="width:464px">Number of distinct unpaid recurrences listed in the unpaid &#x27;List of Recurrences&#x27; field.</td></tr><tr id="581939c5-5de5-4c99-b489-212a461856fa"><td id="eewU" class=""><strong>Start date of past unpaid recurrences</strong></td><td id="AQU`" class="" style="width:464px">Lists the start dates of all unpaid recurrences of a subscription.</td></tr><tr id="1ee6c70b-ab2d-446d-81fe-cf87a704102c"><td id="eewU" class=""><strong>Subscription status</strong></td><td id="AQU`" class="" style="width:464px">Indicates the Subscription’s current status. The Status can be:
+Started: The buyer has generated the bill for the first recurrence of the subscription, but the payment hasn’t been confirmed yet.
+Inactive: The first recurrence hasn’t had its payment confirmed/approved, and is overdue. 
+Active: The payment of the last recurrence is up to date and the subscription is still in effect.
+Overdue: The buyer is behind with the payment of the last recurrence, and the subscription is still in effect.
+Canceled: the subscription was canceled before the expiration date. On the 1st recurrence, whenever a refund or chargeback is requested, the subscription is canceled.
+- Canceled by the Admin: the subscription was canceled by the Hotmart Support Team.
+- Canceled by the Customer: the subscription was canceled by the Subscriber.
+- Canceled by the Seller: the subscription was canceled by the creator or his/her employee.
+OVERDUE: The subscription period is over. The recurrences charged in this period may be all paid up or some may be overdue. After this period, it is not possible to reactivate the same Subscription id, if the Subscriber wishes to renew, a new one must be created.</td></tr><tr id="8b7e6eba-f9b5-439b-846c-4e097fba87d4"><td id="eewU" class=""><strong>Time in the current status (days)</strong></td><td id="AQU`" class="" style="width:464px">Indicates the number of days in the last subscription status.</td></tr><tr id="6a832e22-3508-401e-b52a-71afae2df117"><td id="eewU" class=""><strong>Customer email</strong></td><td id="AQU`" class="" style="width:464px">Buyer&#x27;s contact email.</td></tr><tr id="ed1edce2-3403-4a55-a7cf-6238db3cd19a"><td id="eewU" class=""><strong>Customer Id</strong></td><td id="AQU`" class="" style="width:464px">Unique Buyer Identifier</td></tr><tr id="4925aa99-4a94-4a26-8066-fc0f085f333b"><td id="eewU" class=""><strong>Customer&#x27;s name</strong></td><td id="AQU`" class="" style="width:464px">Buyer&#x27;s name</td></tr><tr id="e69613e4-c581-463a-93ea-da6ef6673384"><td id="eewU" class=""><strong>creator code</strong></td><td id="AQU`" class="" style="width:464px">Unique numeric identifier of the creator&#x27;s account at Hotmart.</td></tr><tr id="4010b23c-db64-4c0b-8383-6495b69678cf"><td id="eewU" class=""><strong>Buyer’s country</strong></td><td id="AQU`" class="" style="width:464px">Buyer&#x27;s country informed at the moment of the purchase.</td></tr><tr id="881abc81-0cb7-452e-a650-e36af7354410"><td id="eewU" class=""><strong>Renewal date</strong></td><td id="AQU`" class="" style="width:464px">Corresponds to the start date of the recurrences, the date on which the first charge of the period is generated.</td></tr><tr id="60ae1aa9-3a2e-442f-bb0e-02d600f876b5"><td id="eewU" class=""><strong>Count of entries per subscription</strong></td><td id="AQU`" class="" style="width:464px">Informs whether there&#x27;s more than one entry for the same subscription id, listing the lines in the &quot;1/2&quot; format (1 of 2). There might be multiple records when there&#x27;s a change of commission currency or unique buyer identifier.</td></tr><tr id="43f4bbf1-e758-464d-b052-6e0c9edd562c"><td id="eewU" class=""><strong>Last recurrence</strong></td><td id="AQU`" class="" style="width:464px">Identification of the last recurrence of a subscription, in the &quot;Number (Start of last recurrence)&quot; format. If the Status is Canceled or Expired, it corresponds to the final recurrence of its lifetime. If it is Started or Inactive, it will be the 1st recurrence. If it is Current (Active or Overdue), it corresponds to the current recurrence.</td></tr><tr id="bbd1a406-415f-4af6-971d-ddd2ef184a37"><td id="eewU" class=""><strong>Scheduled date of the billing attempt for the last recurrence</strong></td><td id="AQU`" class="" style="width:464px">Informs the date of the next automatic collection retry of the LAST recurrence, if it is scheduled. ABOUT RETRIES: When the 1st transaction of the recurrence has been declined and the payment method used was Credit Card, Apple Pay, Google Pay or PayPal, up to 4 automatic retries can be made.</td></tr><tr id="f766599a-78cc-4e20-8fb4-e95008046358"><td id="eewU" class=""><strong>Month/year of subscription start date</strong></td><td id="AQU`" class="" style="width:464px">Month and year of subscription membership date.</td></tr></tbody></table></div></article></body></html>

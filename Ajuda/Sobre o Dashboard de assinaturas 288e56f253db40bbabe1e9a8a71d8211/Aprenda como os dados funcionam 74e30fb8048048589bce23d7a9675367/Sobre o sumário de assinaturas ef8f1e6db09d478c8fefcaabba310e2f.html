@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sobre o sumário de assinaturas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ef8f1e6d-b09d-478c-8fef-caabba310e2f" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/table_gray.svg"/></div><h1 class="page-title">Sobre o sumário de assinaturas</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><figure id="a16a3444-d01c-4e57-b6bc-2be4742ae857" class="image"><a href="Sobre%20o%20suma%CC%81rio%20de%20assinaturas%20ef8f1e6db09d478c8fefcaabba310e2f/subssummarycover.png"><img style="width:1092px" src="Sobre%20o%20suma%CC%81rio%20de%20assinaturas%20ef8f1e6db09d478c8fefcaabba310e2f/subssummarycover.png"/></a></figure><p id="37d60f56-a1b6-4c02-8d9f-5987c1327024" class="">
+</p><p id="ff7049e5-9d78-4a3d-895f-82c6b5d7b8e3" class="">Se você precisa entender qual é a situação atual das suas assinaturas, o sumário junta todas as informações que você precisa para tomar decisões.</p><p id="5884b76e-bb39-415f-9d23-93650d010ff8" class="">Ele inclui também compras com parcelamento inteligente e recuperação, para você entender todas as vendas por recorrência em um lugar só.</p><ul id="a5a77b05-9b55-475f-9514-079987fa3d1d" class="bulleted-list"><li style="list-style-type:disc">Informamos tanto o status estático como o dinâmico de cada assinatura. <a href="https://docs.google.com/document/d/1fR0GAKsw-rUqHZXn950rWfVuzZBAGhmlpfBBwPubCO4/edit#heading=h.kq8vwhn4x4uo">Entenda quais são os status estáticos e dinâmicos.</a> Assim, você pode entender, por exemplo, se a assinatura ativa é nova, uma renovação, ou até mesmo uma assinatura que foi reativada. Também consegue saber quais assinaturas que estão canceladas foram canceladas no último ciclo de cobrança ou antes.</li></ul><ul id="5762c1d8-db3d-4052-81c4-cb7762e64046" class="bulleted-list"><li style="list-style-type:disc">Você consegue saber se a cobrança é mensal, anual, ou outro tipo. Isso facilita na hora de estudar o comportamento de assinaturas mensais de forma separada das anuais, por exemplo.</li></ul><ul id="37681734-9aa5-40d5-942a-f320e83c8539" class="bulleted-list"><li style="list-style-type:disc">Você consegue saber se a assinatura está em período de teste e quando ele acaba.</li></ul><p id="34a781c9-dfe3-4e79-a66c-849f11a37794" class="">Tudo isso seguido das informações de contato do comprador para você conseguir entrar em contato com eles.</p><p id="b7d9c5e7-ee00-4b62-bbfb-511e806056c1" class="">Diversas análises de dados são possíveis com base no sumário. Tome ações baseadas em dados para impulsionar seu negócio!</p><p id="7e8a4b91-46be-49e7-8236-8a33e087e8be" class="">
+</p><p id="03ebdf34-2023-4ece-9e84-bdf4d0c8e835" class="">Colunas da tabela:</p><table id="db5f4095-b445-4973-9da7-3dd97f83afb0" class="simple-table"><tbody><tr id="1eddd6f5-e367-4c99-8a7d-955a0866c77c"><td id="J_CH" class="" style="width:251px"><strong>Nome</strong></td><td id="gb&gt;w" class="" style="width:518px"><strong>Descrição</strong></td></tr><tr id="41078532-bc37-46ec-aeb9-9212a9d11fe5"><td id="J_CH" class="" style="width:251px">Data de adesão</td><td id="gb&gt;w" class="" style="width:518px">Data em que o comprador solicita a adesão da assinatura. É diferente da data de ativação, que informa quando a 1a recorrência da assinatura se tornou ativa.</td></tr><tr id="46d65ebe-0c90-4376-b55f-0eeec24f1fda"><td id="J_CH" class="" style="width:251px">Data e Hora da adesão</td><td id="gb&gt;w" class="" style="width:518px">Data e hora em que o comprador solicita a adesão da assinatura.</td></tr><tr id="172d6e81-fad9-4bad-b81b-c70437e3d829"><td id="J_CH" class="" style="width:251px">ID da assinatura</td><td id="gb&gt;w" class="" style="width:518px">Código único numérico que identifica uma assinatura.</td></tr><tr id="45296c3b-a89c-4a4f-af4d-74ea07fc7037"><td id="J_CH" class="" style="width:251px">Cód. da assinatura</td><td id="gb&gt;w" class="" style="width:518px">Código alfanumérico que identifica uma Assinatura-Assinante. Um mesmo comprador pode ter múltiplos códigos da assinatura.</td></tr><tr id="4d146da8-5938-48df-af29-7987f7bde5e8"><td id="J_CH" class="" style="width:251px">Plano atual</td><td id="gb&gt;w" class="" style="width:518px">Informa o plano vigente na última recorrência da assinatura, já que o comprador pode mudar após a adesão.</td></tr><tr id="33de8dea-b5f4-4099-9b4f-cba412b3a52e"><td id="J_CH" class="" style="width:251px">Chave da oferta atual</td><td id="gb&gt;w" class="" style="width:518px">Informa a chave da oferta vigente na última recorrência da assinatura, já que o comprador pode trocar de plano/oferta após a adesão.</td></tr><tr id="cdddbe9e-c32f-4f28-97c8-45fb427e6d52"><td id="J_CH" class="" style="width:251px">Status da assinatura</td><td id="gb&gt;w" class="" style="width:518px">Status atual da assinatura (status do tipo estático).<a href="Tipos%20de%20status%20(esta%CC%81ticos%20e%20dina%CC%82micos)%209ef644815a894501aa1b7f1accb75409.html"> Ver tipos de status</a> </td></tr><tr id="ffcb642d-b655-477b-9164-7b0783e1c9e8"><td id="J_CH" class="" style="width:251px">Status dinâmico</td><td id="gb&gt;w" class="" style="width:518px">Status baseado no histórico recente da assinatura (status do tipo dinâmico).<a href="Tipos%20de%20status%20(esta%CC%81ticos%20e%20dina%CC%82micos)%209ef644815a894501aa1b7f1accb75409.html"> Ver tipos de status</a> </td></tr><tr id="d83c8769-36b6-4739-a775-e31db7366d1a"><td id="J_CH" class="" style="width:251px">Tipo de parcelamento vigente</td><td id="gb&gt;w" class="" style="width:518px"></td></tr><tr id="32377f6f-f67c-4084-b413-8497e9e1a1a6"><td id="J_CH" class="" style="width:251px">Status da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Informa o Status da última recorrência da assinatura.</td></tr><tr id="ebeb8fff-1f0e-4d00-9ee2-eea6eb19b3d1"><td id="J_CH" class="" style="width:251px">Número da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Identificação da última recorrência de uma assinatura, no formato &quot;Número (Início da última recorrência)&quot;. Se o Status é Cancelado ou Atrasado, corresponde à recorrência final do seu tempo de vida. Se é Iniciada ou Inativa, será a 1a recorrência. Se é vigente (Ativa ou Atrasada), corresponde à recorrência atual.</td></tr><tr id="74b27e78-1ed2-47d4-9811-5e325ceb5cf2"><td id="J_CH" class="" style="width:251px">Quantidade de cobrança da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Quantidade de transações de cobrança existentes para a última recorrência da assinatura.</td></tr><tr id="d7e1dd36-0d9b-4329-aca5-ad31c610d9a6"><td id="J_CH" class="" style="width:251px">Periodicidade</td><td id="gb&gt;w" class="" style="width:518px">É a duração das recorrências do Plano vigente na última recorrência da assinatura, já que o comprador pode trocar de plano após a adesão.</td></tr><tr id="74cce08a-ba33-4abf-be2e-4677eea0d6ef"><td id="J_CH" class="" style="width:251px">Periodicidade (dias)</td><td id="gb&gt;w" class="" style="width:518px">É a periodicidade registrada em dias para facilitar análises usando a planilha.</td></tr><tr id="14cc87e8-9bb0-4a64-8f2a-7a3c701fe545"><td id="J_CH" class="" style="width:251px">Contagem de registros por assinatura</td><td id="gb&gt;w" class="" style="width:518px">Informa se há mais de um registro para um mesmo id da assinatura, enumerando as linhas no formato &quot;1/2&quot; (1 de 2). Pode haver múltiplos registros quando há mudança de moeda da comissão ou de identificador único do comprador.</td></tr><tr id="6dd81ff3-ecc6-4cd0-ae43-facdeb4f6f4c"><td id="J_CH" class="" style="width:251px">Código do produtor</td><td id="gb&gt;w" class="" style="width:518px">Identificador numérico único da conta do usuário produtor na Hotmart.</td></tr><tr id="6fe73e6d-78e9-4713-9f53-6f669de5b0a8"><td id="J_CH" class="" style="width:251px">Cód. do produto</td><td id="gb&gt;w" class="" style="width:518px">Código do produto vendido na assinatura.</td></tr><tr id="2898d3ce-62c7-447b-a769-5a3a1b56c594"><td id="J_CH" class="" style="width:251px">Produto</td><td id="gb&gt;w" class="" style="width:518px">Nome do produto vendido na assinatura.</td></tr><tr id="bc3511cf-0467-4f88-af34-35f396c34002"><td id="J_CH" class="" style="width:251px">Tempo no status atual (dias)</td><td id="gb&gt;w" class="" style="width:518px">Indica o número de dias no último status da assinatura.</td></tr><tr id="2fc75afb-bc8b-4eff-8dda-4499b225374f"><td id="J_CH" class="" style="width:251px">Análise da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Os valores possíveis são:
+- Solicitação de reembolso em análise. 
+- Retentativas em andamento. 
+- Retentativas encerradas sem pagamento. 
+- Pagamento não aprovado. 
+- Em trial até [data_fim_trial]
+- Paga
+- Reembolsada
+- Chargeback
+- Assinatura cancelada
+- Assinatura inativa</td></tr><tr id="39859fe7-81d0-4be6-9345-ed96be6c4ffb"><td id="J_CH" class="" style="width:251px">Número máximo de recorrências para cobrança</td><td id="gb&gt;w" class="" style="width:518px">É a quantidade máxima de recorrências de um Produto-Plano definida pelo Produtor, sendo a data do vencimento o fim do período da última recorrência. Enquanto a Assinatura está vigente, a cobrança das recorrências acontece automaticamente a cada início de período. Após o vencimento, não é possível renovar a mesma Assinatura. Caso não seja definida uma quantidade máxima de recorrências, ela só deixa de ser vigente se for cancelada.</td></tr><tr id="174dc4a1-9975-4763-a613-cf3c2a176743"><td id="J_CH" class="" style="width:251px">Data de referência da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Data em que se inicia a última recorrência de uma assinatura (período de utilização do serviço).</td></tr><tr id="de7f3e72-a5d8-4530-a22d-621ecc789cdb"><td id="J_CH" class="" style="width:251px">Quantidade de recorrências passadas pagas</td><td id="gb&gt;w" class="" style="width:518px">Quantidade de recorrências pagas distintas no tempo de vida de uma assinatura.</td></tr><tr id="3405ba95-d707-48b0-aa68-698733c4cea7"><td id="J_CH" class="" style="width:251px">Tem recorrências passadas não pagas?</td><td id="gb&gt;w" class="" style="width:518px">Indica se a assinatura tem recorrências não pagas.</td></tr><tr id="c3648af9-8baa-4c42-873f-b05e2abd7be5"><td id="J_CH" class="" style="width:251px">Números ref. das recorrências passadas não pagas</td><td id="gb&gt;w" class="" style="width:518px">Lista os números de todas as recorrências não pagas de uma assinatura.</td></tr><tr id="ec4e4671-b93f-4aeb-9369-756a2888237e"><td id="J_CH" class="" style="width:251px">Data de início das recorrências passadas não pagas</td><td id="gb&gt;w" class="" style="width:518px">Lista as datas de início de todas as recorrências não pagas de uma assinatura.</td></tr><tr id="ba01326b-96c6-4239-b8f2-cd2387358d20"><td id="J_CH" class="" style="width:251px">Quantidade de recorrências passadas não pagas</td><td id="gb&gt;w" class="" style="width:518px">Quantidade de recorrências não pagas distintas, listadas no campo &#x27;Lista de Recorrências&#x27; não pagas.</td></tr><tr id="fa97b59a-072b-45d4-b6ca-2fe76155a921"><td id="J_CH" class="" style="width:251px">Moeda de compra</td><td id="gb&gt;w" class="" style="width:518px">Moeda em que foi feito o pagamento da adesão e será utilizada em toda a vigência da assinatura.</td></tr><tr id="5cdae750-d4c6-47d5-83e8-db099b62208d"><td id="J_CH" class="" style="width:251px">Valor integralizado total</td><td id="gb&gt;w" class="" style="width:518px">Soma do valor disponível para saque, desde a adesão de uma assinatura, em uma determinada moeda.</td></tr><tr id="fc8311cd-59a1-4985-b720-0dea674fea77"><td id="J_CH" class="" style="width:251px">Tempo de vida (dias)</td><td id="gb&gt;w" class="" style="width:518px">Informa tempo em dias da assinatura, desde a Data de adesão até:- Ativa / Atrasada: data corrente- Inativa / Iniciada: 0- Cancelada: data do cancelamento- Vencida: data do vencimento</td></tr><tr id="b2e8c89d-a47a-4740-9aee-c29d2a071e80"><td id="J_CH" class="" style="width:251px">Moeda da comissão</td><td id="gb&gt;w" class="" style="width:518px">Moeda selecionada para pagamento da comissão no momento da adesão. Pode ocorrer mudança durante a vigência da assinatura. Nessa situação, haverá uma linha na tabela para cada moeda.</td></tr><tr id="7822ba5f-3838-4eac-b758-9f515bb4d043"><td id="J_CH" class="" style="width:251px">Comissão efetiva total</td><td id="gb&gt;w" class="" style="width:518px">Soma dos valores de comissão referentes a pagamentos confirmados. E esse valor corresponde à comissão de uma recorrência.</td></tr><tr id="7c4bf8c5-894d-4111-9585-c477c90d0743"><td id="J_CH" class="" style="width:251px">Data do cancelamento</td><td id="gb&gt;w" class="" style="width:518px">Data em que foi cancelada a assinatura (a solicitação e a efetivação do cancelamento acontecem simultaneamente). Após cancelamento, ela pode ser reativada se ainda não estiver Vencida. Se isso acontecer, a data continua preenchida. Caso seja reativada e novamente cancelada, a data de cancelamento será atualizada para a mais recente.Na 1ª recorrência, sempre que é solicitado reembolso ou chargeback, a assinatura é cancelada.</td></tr><tr id="fbe2c3c9-24ee-4ad1-b7ee-f9335ddb9adb"><td id="J_CH" class="" style="width:251px">Teve trial?</td><td id="gb&gt;w" class="" style="width:518px">Informa se a assinatura teve período gratuito.</td></tr><tr id="df12de83-0e78-48f6-8679-848fe6e3aaec"><td id="J_CH" class="" style="width:251px">Data fim do trial</td><td id="gb&gt;w" class="" style="width:518px">Quando existe período gratuito na assinatura, indica a data do seu fim.</td></tr><tr id="170819ea-6a53-408a-982e-c44d03004394"><td id="J_CH" class="" style="width:251px">Recorrências passadas não pagas</td><td id="gb&gt;w" class="" style="width:518px">Lista todas as recorrências não pagas de uma assinatura, no formato &quot;Número (Data de início)&quot;.</td></tr><tr id="b848770e-0bc4-4e82-8082-619575fb05cf"><td id="J_CH" class="" style="width:251px">Nome do cliente</td><td id="gb&gt;w" class="" style="width:518px">Nome do comprador</td></tr><tr id="47ad72b0-3bf3-43d4-986e-a002dacc68a4"><td id="J_CH" class="" style="width:251px">E-mail do cliente</td><td id="gb&gt;w" class="" style="width:518px">E-mail de contato do comprador.</td></tr><tr id="736a37fb-864b-49c7-82c1-74308c205200"><td id="J_CH" class="" style="width:251px">País do comprador</td><td id="gb&gt;w" class="" style="width:518px">País do comprador informado no momento da compra.</td></tr><tr id="22c9a0c4-cb90-43ce-a0bd-cfa7ff0a223a"><td id="J_CH" class="" style="width:251px">DDD do cliente</td><td id="gb&gt;w" class="" style="width:518px">Código de telefone (DDD) do comprador informado no momento da compra.</td></tr><tr id="7bf04329-0dd1-407a-988b-5310fd2ff0c3"><td id="J_CH" class="" style="width:251px">Telefone do cliente</td><td id="gb&gt;w" class="" style="width:518px">Telefone do comprador informado no momento da compra.</td></tr><tr id="e1720601-a157-4c05-b5e2-2a48815933fb"><td id="J_CH" class="" style="width:251px">Última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Identificação da última recorrência de uma assinatura, no formato &quot;Número (Início da última recorrência)&quot;. Se o Status é Cancelada ou Vencida, corresponde à recorrência final do seu tempo de vida. Se é Iniciada ou Inativa, será a 1a recorrência. Se é vigente (Ativa ou Atrasada), corresponde à recorrência atual.</td></tr><tr id="aebfab55-f6a5-4e68-b5c2-4f8cec2443d2"><td id="J_CH" class="" style="width:251px">Data programada para retentativa de cobrança da última recorrência</td><td id="gb&gt;w" class="" style="width:518px">Informa a data da próxima retentativa automática de cobrança da ÚLTIMA recorrência, caso esteja programada. SOBRE RETENTATIVAS: Quando a 1ª transação da recorrência foi recusada e o tipo de pagamento usado foi Cartão de Crédito, Apple Pay, Google Play ou Paypal, podem ser realizadas até 4 retentativas automáticas.</td></tr><tr id="5665f22d-3369-44be-a498-f6596e375fa1"><td id="J_CH" class="" style="width:251px">Dia de renovação</td><td id="gb&gt;w" class="" style="width:518px">Corresponde ao dia de início das recorrências, aquele em que é gerada a primeira cobrança do período.</td></tr></tbody></table></div></article></body></html>

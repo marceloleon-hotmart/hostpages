@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Types of Status (Static and Dynamic)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="50c81bcd-1c4a-4197-b183-bb804d39a87f" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/traffic-light_gray.svg"/></div><h1 class="page-title"><strong>Types of Status (Static and Dynamic)</strong></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="725ab040-b7e5-4a06-88de-bb7d872bf697" class="">When we talk about subscriptions, it&#x27;s essential to understand that they have two types of status: static and dynamic. The <strong>static status shows the current situation of the subscription</strong>, while the <strong>dynamic status shows changes over time</strong>. This duality provides a comprehensive view of the state and evolution of subscriptions.</p><figure id="37b7ca72-9041-48f8-ab2a-85f40aefe9ee" class="image"><a href="Types%20of%20Status%20(Static%20and%20Dynamic)%2050c81bcd1c4a4197b183bb804d39a87f/Dataviz_assinaturas_(7).jpg"><img style="width:9398px" src="Types%20of%20Status%20(Static%20and%20Dynamic)%2050c81bcd1c4a4197b183bb804d39a87f/Dataviz_assinaturas_(7).jpg"/></a><figcaption>Diagram with static and dynamic statuses</figcaption></figure><h2 id="f9a4269a-2845-4810-a445-cfc35b750fda" class=""><strong>Static Status</strong></h2><h3 id="f86e7b86-cca6-42cc-88e9-d1fa87b36613" class="">Starded</h3><p id="5f05c73a-bcff-43ed-9bb6-15f8ddd3922e" class="">Occurs when the sale is initiated. If the payment is successfully completed, the subscription is confirmed and becomes <code><strong>active</strong></code>; otherwise, it remains inactive.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="28987fd4-7024-4b34-bd86-b8399140a7eb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tips
+</strong><ul id="b8787e88-cc23-4612-b005-90844b1261c9" class="bulleted-list"><li style="list-style-type:disc">Subscriptions in <code><strong>initiated</strong></code> status for a long time: This may indicate the need to offer another payment method to the buyer. Sending a payment reminder can also make a difference in converting a pending payment into a successful completion.</li></ul><ul id="6da1dd4b-3871-4a31-bbb2-c3923818bcaf" class="bulleted-list"><li style="list-style-type:disc">Multiple active subscriptions for the same buyer and product: It can happen that a buyer initiates payment by bank slip and, at the same time, generates another payment request by credit card or PIX. This can result in the new subscription becoming active while the old one is still in the <code><strong>initiated</strong></code> status.</li></ul></div></figure><h3 id="b410bc2e-21f4-470c-a7ca-9ac86ad1785e" class=""><strong>Active</strong></h3><p id="65b76bee-585e-46fa-b1ab-a80f0593bc2f" class="">Indicates an active subscription, in the current period, with the last recurrence payment confirmed, and the buyer has access to the content. The status is independent of payment for previous recurrences before the last one and may include subscriptions still in the trial period.</p><h3 id="efa8a1f8-cdcd-4332-af20-a2770de9c97b" class=""><strong>Inactive</strong></h3><p id="0c32ffef-c976-4eeb-8c3a-e2f661257c87" class="">Occurs when the activation of an <code><strong>initiated</strong></code> subscription fails. The first recurrence was not paid and is overdue.</p><p id="0014abfb-9065-407a-b9ec-e3cf34e83e74" class="">Note: It may happen that the same buyer generates a new subscription, pays, and activates it. In this case, they will generate a new subscription ID, while the inactive one remains registered.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="89951e5c-44ac-4af6-a75d-63ee2bcaf0c6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tip</strong>
+You can identify if there is any common profile among subscribers with inactive subscriptions to increase conversions in the future.</div></figure><h3 id="8f9a9a9a-712d-4a14-b678-39bc43b7e81a" class="">Delayed</h3><p id="13416dea-5b8e-47c7-b095-3a68050ffbdf" class="">Active subscriptions with delayed payment for the last recurrence. They can be in one of three situations:</p><ul id="0cf724a6-4789-49be-8a1a-7b8a27d31001" class="toggle"><li><details open=""><summary>Automatic recovery attempt ended with no payment.</summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0554401a-aa2d-4f98-b61c-15d9a895a73f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tip</strong>
+Provide options to the customer.
+In this case, the attempt was terminated due to non-payment, and you can contact the buyer to propose a new payment for annual subscriptions through the <a href="https://help.hotmart.com/en/article/como-utilizar-o-recuperador-de-vendas-para-produtos-de-assinatura/13794416528781"><strong>Subscription Sales Recovery Tool</strong></a> or <a href="https://help.hotmart.com/pt-BR/article/como-configurar-retentativas-de-cobranca-para-assinantes-inadimplentes-/360060956151"><strong>schedule new collection retries</strong></a> through the platform.</div></figure></details></li></ul><ul id="52c6cdcf-ecba-45d0-a75b-7a875d94d513" class="toggle"><li><details open=""><summary>In Automatic recovery attempt by Hotmart.</summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="39e26fe8-4a0f-4860-9930-4023101368b2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tip</strong><p id="9b94eb89-fbfd-44b6-9c2d-f5809adfdad9" class="">Wait or encourage the customer to complete the payment.</p><p id="23dcff18-41a9-463d-a262-b4942e9ba5fc" class="">In the case of attempts with payment not approved, you can check the reasons for credit card billing failure through the <a href="https://app.hotmart.com/reports/cancellation/reason"><strong>Credit Card Refusal Reasons Report</strong></a> to investigate the major issues.</p></div></figure></details></li></ul><ul id="9ad17e0f-a342-4440-87e3-aca8f8d544ed" class="toggle"><li><details open=""><summary>Payment not approved. </summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0dd8b98b-0e00-400c-9f7a-63dba1da31f2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tip</strong>
+In case of delay in payment for the last recurrence where the payment was not approved, you can propose new payment methods or even negotiate the unpaid installments.</div></figure></details></li></ul><h3 id="655a5ffc-a24f-41f1-acf7-86ecef34a32f" class=""><strong>Canceled</strong></h3><p id="153d5bdb-2dc4-4fa7-94f8-6b2371c4c274" class="">There are three types:</p><ul id="7a743203-31a5-4a8b-82f6-f2deb84723c8" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Canceled by the buyer</strong></code>: Subscription canceled by the buyer.</li></ul><ul id="5dfe2cdb-7f52-43d0-b36a-5651fdd9ba6e" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Canceled by the seller</strong></code>: An active subscription can be changed to this status if the producer decides to cancel it for some administrative reason.</li></ul><ul id="c5e4214f-ba6c-4f3e-8e9a-b523a6a8988c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>Canceled by the administrator</strong></code>: Subscription canceled by the Hotmart Support Team when any irregularity is identified.</li></ul><h3 id="2bac4641-322e-4542-a5a3-97e74d4531b8" class=""><strong>Expired</strong></h3><p id="4139c92e-9c38-4e25-a96d-1fc0c1a8674f" class="">A subscription whose duration period has ended, common in cases of subscriptions with a maximum number of installments or single payment.</p><p id="7fcffde4-d0d3-45ab-aec7-12b264f9bd04" class="">Notes: The recurrences charged during this period may all be settled or there may be some overdue. After this period, it is not possible to reactivate the same Subscription ID; if the Subscriber wants to renew, a new ID will be created.</p><p id="e17b6153-d397-4936-aa40-6c2d5c224afa" class="">You can check if there are overdue payments through the &quot;List of unpaid recurrences&quot; column and <a href="https://help.hotmart.com/EN/article/como-configurar-retentativas-de-cobranca-para-assinantes-inadimplentes-/360060956151"><strong>schedule new collection retries</strong></a> through the platform.</p><h1 id="1b6a7c3c-e066-4b9f-aad4-7e52cf832b7c" class=""><strong>Dynamic Status</strong></h1><h3 id="31e6897b-6783-4c7a-b3c0-6087025df8c9" class=""><strong>Initiated</strong></h3><p id="ef7d04ed-a280-4892-8844-b9f206389762" class="">This status is assigned to subscriptions when the sale is initiated, before enrollment. As long as the first payment is neither approved nor declined, the subscription remains with the dynamic status <code><strong>initiated</strong></code>.</p><h3 id="4dca6fdf-8d43-4d75-b851-d7a6992ced96" class=""><strong>New</strong></h3><p id="30a5e2ef-d7e4-4e59-a4d2-54904d125fc3" class="">When a subscription that did not exist or was in the <code><strong>initiated</strong></code> status becomes <code><strong>active</strong></code>, it receives the dynamic status <code><strong>new</strong></code>, indicating that it is a new active subscription.</p><h3 id="e4dcc579-5a7a-4e6e-8f80-131b149179f5" class=""><strong>Renewal</strong></h3><p id="e804fac0-8521-4527-8a48-5e2e15b40676" class="">This dynamic status is assigned to subscriptions that were already in the <code><strong>active</strong></code> status in the previous period and remain in that status until the last update. We consider retention all subscriptions that remain active.</p><h3 id="31b803c1-3596-425e-8222-40cc9b4ae547" class=""><strong>New Loss</strong></h3><p id="ff2d61bd-843c-45ad-97d4-adbd931cd087" class="">These are subscriptions that were in the <code><strong>active</strong></code> status in the last period and, in the last update, are in any of the three <code><strong>canceled</strong></code> statuses. We consider a new loss all active subscriptions that became canceled between two periods.</p><h3 id="83a84964-6322-4db1-88eb-4d28e7c83764" class=""><strong>New Late</strong></h3><p id="8318e0a0-d40f-42e6-9d64-ce8dcc483fa8" class="">These are subscriptions that were in the <code><strong>active</strong></code> status in the last period and, in the last update, have a pending payment, with the <code><strong>late</strong></code> status.</p><h3 id="b0d8edde-6119-4d57-b7f1-24101996163c" class=""><strong>New Expired</strong></h3><p id="edb4ed47-7abe-4308-a4d9-3c70a85756b4" class="">These are subscriptions that were in the <code><strong>active</strong></code> or <code><strong>late</strong></code> status in the last period and, in the last update, are in the <code><strong>expired</strong></code> status. We consider a loss due to the end of the subscription period all active or late subscriptions that became finished between two periods.</p><h3 id="7baaa383-5661-4afa-8d6d-836969f9470e" class=""><strong>Old Loss</strong></h3><p id="dcec48a7-bee0-4865-a3b4-bedf6d087e6d" class="">These are subscriptions that were in some <code><strong>canceled</strong></code> or <code><strong>late</strong></code> status in the last period and, in the last update, are in any of the three <code><strong>canceled</strong></code> statuses. This status of old losses aims to list possible recoveries without affecting the subscription variation numbers between the two periods.</p><h3 id="03259591-8169-470c-8089-bb5976846e36" class=""><strong>Quick Loss</strong></h3><p id="1045bbf6-ee30-47d9-b957-3525267e3e95" class="">These are subscriptions that were in the <code><strong>inactive</strong></code> or <code><strong>expired</strong></code> status and became <code><strong>canceled</strong></code> or <code><strong>late</strong></code>.</p><h3 id="ea161345-e2e5-4309-8805-43fd5cdf5c2c" class=""><strong>Old Late</strong></h3><p id="52bad362-5666-4822-b64a-d2086de8fb91" class="">These are subscriptions that were in some <code><strong>canceled</strong></code> or <code><strong>late</strong></code> status in the last period and, in the last update, are in the <code><strong>late</strong></code> status. This status of old late aims to list possible recoveries without affecting the subscription variation numbers between the two periods.</p><h3 id="229258c7-5087-424a-b656-b2cf689308d6" class=""><strong>Reactivated</strong></h3><p id="6d877b81-b4ff-4c9a-ae48-392c0ce78b4a" class="">When an <code><strong>inactive</strong></code> subscription (canceled, late, or finished) becomes <code><strong>active</strong></code>, it receives the dynamic status <code><strong>reactivated</strong></code>, indicating the reactivation of an old subscription.</p><p id="d9a8df13-954c-4263-ac26-ea7438b3d449" class="">We also consider as reactivation old subscriptions that return with another product or offer.</p></div></article></body></html>
