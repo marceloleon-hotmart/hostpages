@@ -1,29 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamada de API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 80%;
+            margin: 20px auto;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
+    <h2>Chamada de API</h2>
     <button onclick="chamarAPI()">Fazer Requisição</button>
-    <pre id="resultado"></pre>
+    <pre id="resultado">Clique no botão para ver a resposta da API...</pre>
 
     <script>
         async function chamarAPI() {
             const url = 'https://launcher.hotmart.com/rest/v1/code/tag/account?etag=154943';
+            const resultado = document.getElementById('resultado');
 
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Authorization': 'Bearer H4sIAAAAAAAAAG1U2XKrOBD9otwSGOL40SwCFEsEkAToJWUgNqtNYmKWrx%2Fhu9TcmnmghFqt06fVp%2FtjRmXm5JVfoYgtnkIq7%2BZdQj03vWev6RNuot2PjxkpucrnRNXLLGar85AmqBbxdD90U5up%2Bv7o7EAWw7kw9TpTwVY4toYXT087NhCrqNIIAFLn44E2um%2BdB2HtNXmmiXo%2F4oVNXjVWuUruuSPx21uVd7wU5kqmmI9J2HotuHldeS9M5cHFq6%2BVvLfBVrDxLbylMnaq8ls2G1jEu2%2FPkXegUR4TUXq2xN2EchV95pR3f8HgUHsjibQNNrUJL%2FkW03xzqJki7bO0z7jOt9kfTP22YgbybuEoZX4JvlN1N%2Fiq%2FO9Imzm7x%2FmfN7BuE6ltgK39SOpAW1cfoDlNSJ%2F971nrh3YbRyzkAZtOIdNZxEPhAwgk%2F7uvGCwBKPIVTkPrpmJVdFhFVTorJelQe6CB5sd4SClvSQQUsqRA1KhJVW%2FGlidzSyci42ArBb7lrTG%2FSX1epE3zrVzBdK%2F7VNaL3kZ%2FsTfEstXVhut0xPV%2Bi%2BOe5ABeeduX9CIqVhfPLMnl6%2FcRgQWPnN4s4lYhNelETaq0W7mISsia%2B1ZbH2JbEVTqgMoKO%2BksHFJJ3FnGUsnSjL5lz8Q6S377LaFShHUqueEB02YjTKkba83xrEqOEkN0ZDlPqRqWuAtbXxVl5pLWX24yz2BD5Oo%2FvoH81qhnrxrVzsJhZ%2BbAvujsc6DulsKxz2HX3o7Oy9afpdY6rq3Cl1oA8tPIykvqMk04kLVdddiLBD%2F0Gdk7xiB6S8AEAxZUBxOZXNmZIQ%2BNBJRv3JZFax92jyphwJrdKWwRDJmCOAOrPQkZQrSB0ar9FY8yGHG4wxEXUNYbctte%2FdQinuo01u%2BJilrJebUtRWLc84vU%2BINf2GbyLbJfe6YYBmsGHPJdwDmyIhtS%2Be%2BEDDK5hw8fiBBvoBXznc1%2BxqHMhlEk80lWnXHvbxuAmNml8a8zVcR6I%2BLwnq9DozW8mBMUSL9EMSIKpJaVR%2F7NMSFj5kD9EdeeDG6LN9YoJwZal7Y8WO1FQhRZrz5Tdn%2Fnpu5uaYzueQebbPOIWwoXr2vEADmxhltUEZC17SmC3HzMERfdhcvBL%2F86%2Fy%2FmIH1KIWu67oNGP%2F15%2F3XmtCQIODpQm5%2B4XULK%2BClsuMEhj8JonUl8EQk6pZef%2BEcHgt%2B1SaKxOl7Cfp1PZIFdGmM1pfsB17whUst%2BHNZSy4vU%2FSAcDwirkD0TzCmFv7hNvXxXidc2K4ack6ofy%2FM6lz0le7UCAMepumKIOh18BzWks2VvFLXs7cW7gB%2B%2BmfhW9vqpefXNfaaz83kfmq%2Fovjl3d%2BtFMUf2su%2B7vtioffBMuF20YKmm%2FPZ6cs9vYvnKdXvyqSnygxkbz%2BnVhZW7Hf3xRe%2Fgu7ao4Pxpp2zKTu5xOJymJJncQMzTRznWL5uIX9zye9TSO72ZByPYvb9dlXc3%2B6QfXDH2T9gYsv3WQsfaQNo0fYSf9hL0seKo9jvXcK%2BdzOcnOjZDu%2FcqnqvXsfsqjVPSvjTfxbX3dfeNVOVyuljN3kMN6IE%2B8kiEFXg6n27%2B2KKyfflug8hbLt8vVx588X38jEjySpMhePtym%2F5jh25P8OPDNaWAx%2BDqfidPG995VXCSX7eFj9Ls1aCb85m69L5E4WelEm38Bzxa460rBwAA',
-                    'Accept': 'application/json, text/plain, */*'
+            try {
+                resultado.textContent = "Carregando...";
+
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer H4sIAAAAAAAAAG1U2XKrOBD9otwSGOL40SwCFEsEkAToJWUgNqtNYmKWrx%2Fhu9TcmnmghFqt06fVp%2FtjRmXm5JVfoYgtnkIq7%2BZdQj03vWev6RNuot2PjxkpucrnRNXLLGar85AmqBbxdD90U5up%2Bv7o7EAWw7kw9TpTwVY4toYXT087NhCrqNIIAFLn44E2um%2BdB2HtNXmmiXo%2F4oVNXjVWuUruuSPx21uVd7wU5kqmmI9J2HotuHldeS9M5cHFq6%2BVvLfBVrDxLbylMnaq8ls2G1jEu2%2FPkXegUR4TUXq2xN2EchV95pR3f8HgUHsjibQNNrUJL%2FkW03xzqJki7bO0z7jOt9kfTP22YgbybuEoZX4JvlN1N%2Fiq%2FO9Imzm7x%2FmfN7BuE6ltgK39SOpAW1cfoDlNSJ%2F971nrh3YbRyzkAZtOIdNZxEPhAwgk%2F7uvGCwBKPIVTkPrpmJVdFhFVTorJelQe6CB5sd4SClvSQQUsqRA1KhJVW%2FGlidzSyci42ArBb7lrTG%2FSX1epE3zrVzBdK%2F7VNaL3kZ%2FsTfEstXVhut0xPV%2Bi%2BOe5ABeeduX9CIqVhfPLMnl6%2FcRgQWPnN4s4lYhNelETaq0W7mISsia%2B1ZbH2JbEVTqgMoKO%2BksHFJJ3FnGUsnSjL5lz8Q6S377LaFShHUqueEB02YjTKkba83xrEqOEkN0ZDlPqRqWuAtbXxVl5pLWX24yz2BD5Oo%2FvoH81qhnrxrVzsJhZ%2BbAvujsc6DulsKxz2HX3o7Oy9afpdY6rq3Cl1oA8tPIykvqMk04kLVdddiLBD%2F0Gdk7xiB6S8AEAxZUBxOZXNmZIQ%2BNBJRv3JZFax92jyphwJrdKWwRDJmCOAOrPQkZQrSB0ar9FY8yGHG4wxEXUNYbctte%2FdQinuo01u%2BJilrJebUtRWLc84vU%2BINf2GbyLbJfe6YYBmsGHPJdwDmyIhtS%2Be%2BEDDK5hw8fiBBvoBXznc1%2BxqHMhlEk80lWnXHvbxuAmNml8a8zVcR6I%2BLwnq9DozW8mBMUSL9EMSIKpJaVR%2F7NMSFj5kD9EdeeDG6LN9YoJwZal7Y8WO1FQhRZrz5Tdn%2Fnpu5uaYzueQebbPOIWwoXr2vEADmxhltUEZC17SmC3HzMERfdhcvBL%2F86%2Fy%2FmIH1KIWu67oNGP%2F15%2F3XmtCQIODpQm5%2B4XULK%2BClsuMEhj8JonUl8EQk6pZef%2BEcHgt%2B1SaKxOl7Cfp1PZIFdGmM1pfsB17whUst%2BHNZSy4vU%2FSAcDwirkD0TzCmFv7hNvXxXidc2K4ack6ofy%2FM6lz0le7UCAMepumKIOh18BzWks2VvFLXs7cW7gB%2B%2BmfhW9vqpefXNfaaz83kfmq%2Fovjl3d%2BtFMUf2su%2B7vtioffBMuF20YKmm%2FPZ6cs9vYvnKdXvyqSnygxkbz%2BnVhZW7Hf3xRe%2Fgu7ao4Pxpp2zKTu5xOJymJJncQMzTRznWL5uIX9zye9TSO72ZByPYvb9dlXc3%2B6QfXDH2T9gYsv3WQsfaQNo0fYSf9hL0seKo9jvXcK%2BdzOcnOjZDu%2FcqnqvXsfsqjVPSvjTfxbX3dfeNVOVyuljN3kMN6IE%2B8kiEFXg6n27%2B2KKyfflug8hbLt8vVx588X38jEjySpMhePtym%2F5jh25P8OPDNaWAx%2BDqfidPG995VXCSX7eFj9Ls1aCb85m69L5E4WelEm38Bzxa460rBwAA',
+                        'Accept': 'application/json, text/plain, */*'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro: ${response.status} - ${response.statusText}`);
                 }
-            });
 
-            const data = await response.json();
-            document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+                const data = await response.json();
+                resultado.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                resultado.textContent = `Erro ao buscar dados: ${error.message}`;
+            }
         }
     </script>
 </body>
 </html>
+
