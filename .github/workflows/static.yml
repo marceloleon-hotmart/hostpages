@@ -36,9 +36,8 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1 # Alterado de v4 para v1
+        uses: actions/upload-pages-artifact@v1 # Correto para upload de páginas
         with:
-          # Upload entire repository
           path: '.'
 
       - name: Deploy to GitHub Pages
