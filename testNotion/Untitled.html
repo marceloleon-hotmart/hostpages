@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -16,28 +15,64 @@
             font-size: 16px;
             cursor: pointer;
         }
-        #resultado {
+        /* Estilizando o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+        pre {
             background-color: #f4f4f4;
             padding: 15px;
             border-radius: 5px;
-            text-align: left;
-            max-width: 80%;
-            margin: 20px auto;
             white-space: pre-wrap;
             word-wrap: break-word;
             overflow: auto;
+            max-height: 60vh;
+        }
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h2>Chamada de API</h2>
     <button onclick="chamarAPI()">Fazer Requisição</button>
-    <div id="resultado">Clique no botão para ver a resposta da API...</div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h3>Resposta da API</h3>
+            <pre id="resultado">Aguardando resposta...</pre>
+        </div>
+    </div>
 
     <script>
         async function chamarAPI() {
             const url = 'https://launcher.hotmart.com/rest/v1/code/tag/account?etag=154943';
             const resultado = document.getElementById('resultado');
+            const modal = document.getElementById('modal');
 
             try {
                 resultado.textContent = "Carregando...";
@@ -54,11 +89,18 @@
                     throw new Error(`Erro: ${response.status} - ${response.statusText}`);
                 }
 
-                const data = await response.text(); // Agora trata como texto (HTML)
-                resultado.innerHTML = data; // Renderiza o HTML diretamente
+                const data = await response.text(); // Obtém o retorno como texto
+                resultado.textContent = data; // Exibe no modal sem interpretar o HTML
+                modal.style.display = "flex"; // Exibe o modal
+
             } catch (error) {
                 resultado.textContent = `Erro ao buscar dados: ${error.message}`;
+                modal.style.display = "flex"; // Exibe o modal mesmo em caso de erro
             }
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').style.display = "none";
         }
     </script>
 </body>
